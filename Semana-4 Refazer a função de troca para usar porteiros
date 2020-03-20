@@ -1,0 +1,24 @@
+# include  < stdio.h >
+
+ troca nula ( int * a, int * b);
+
+int  main ( vazio )
+{
+    int x = 1 ;
+    int y = 2 ;
+
+    printf ( " x é % i \ n " , x);
+    printf ( " y é % i \ n " , y);
+    printf ( " Trocando ... \ n " );
+    swap (& x, & y);
+    printf ( " Trocado! \ n " );
+    printf ( " x é % i \ n " , x);
+    printf ( " y é % i \ n " , y);
+}
+
+ troca nula ( int * a, int * b)
+{
+    int tmp = * a;
+    * a = * b;
+    * b = tmp;
+} 
