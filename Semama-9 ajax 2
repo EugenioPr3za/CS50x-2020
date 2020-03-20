@@ -1,0 +1,27 @@
+<! DOCTYPE html >
+< html >
+    < cabeça >
+        < script  src = " http://code.jquery.com/jquery-latest.min.js " > </ script >
+        < script >
+            $ ( function ( )  {
+                $ ( '#quote' ) . submit ( function ( event )  {
+                    var  url  =  'quote.php? symbol ='  +  $ ( '#symbol' ) . val ( ) ;
+                    $ . getJSON ( url ,  função ( dados )  {
+                        $ ( '#preço' ) . html ( dados . preço ) ;
+                    } ) ;
+                    evento . preventDefault ( ) ;
+                } ) ;
+            } ) ;
+        </ script >
+        < title > ajax-0 </ title >
+    </ cabeça >
+    < corpo >
+        < form  id = " quote " >
+            Símbolo: < input  autocomplete = " off " id = " symbol " type = " text " />
+            < Br >
+            Preço: < span  id = " price " > a ser determinado </ span >
+            < Br > < br >
+            < input  type = " submit " value = " Obter cotação " />
+        </ form >
+    </ corpo >
+</ html > 
