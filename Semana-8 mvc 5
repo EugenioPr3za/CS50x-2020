@@ -1,0 +1,26 @@
+<? php
+
+/ **
+ * Renderiza modelo.
+ * /
+função  render ( $ template , $ data = [])
+{
+    $ caminho = __DIR__. "/../templates/" . $ template . ".php" ;
+    if ( file_exists ( $ path ))
+    {
+        extrair ( $ dados );
+        require ( $ caminho );
+       
+       
+       
+  
+  
+/
+-------02
+<? php  require (__DIR__. "/../includes/helpers.php" ); ?>
+<? php  render ( "cabeçalho" , [ "title" => "CS50" ]); ?>
+< ul >
+    < Li > < a  href = " lectures.php " > Palestras </ a > </ li >
+    < Li > < a  href = " http://cdn.cs50.net/2013/fall/lectures/0/w/syllabus/syllabus.html " > Syllabus </ a > </ li >
+</ ul >
+<? php  render ( "rodapé" ); ?> 
