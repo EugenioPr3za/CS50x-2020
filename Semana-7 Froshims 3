@@ -1,0 +1,76 @@
+<! DOCTYPE html>
+< html >
+    < cabeça >
+        < Vínculo  rel = " stylesheet "  href = " https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css "  integridade = " sha384-1q8mTJOASx8j1Au + a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7 "  crossorigin = " anonymous " >
+        < Título > Frosh IMs </ title >
+    </ cabeça >
+    < body  style = " alinhamento de texto: centro; " >
+        < h1 > Registre-se para mensagens instantâneas do Frosh </ h1 >
+        < formulário  action = " register-3.php "  method = " post " >
+            Nome: < input  name = " name "  type = " text " >
+            < Br >
+            < input  name = " captain "  type = " checkbox " > Capitão?
+            < Br >
+            < input  name = " gender "  type = " radio "  value = " F " > Feminino
+            < input  name = " gender "  type = " radio "  value = " M " > Masculino
+            < Br >
+            Dormitório:
+            < selecione  nome = " dormitório " >
+                < opção  value = " " > </ opção >
+                < opção  value = " Apley Court " > Apley Court </ opção >
+                < opção  value = " Canaday " > Canaday </ option >
+                < opção  value = " Grays " > Cinza </ option >
+            </ selecione >
+            < Br >
+            < input  type = " submit "  value = " Register " >
+        </ form >
+    </ corpo >
+</ html > 
+/
+/
+/
+/
+/
+<? php
+
+require ( "PHPMailer / class.phpmailer.php" );
+
+if (! empty ( $ _POST [ 'name' ]) &&! empty ( $ _POST [ 'gender' ]) &&! empty ( $ _POST [ 'dormitório' ]) {
+    $ mail = novo  PHPMailer ();
+
+    $ mail -> IsSMTP ();
+    $ mail -> Host = "smtp.fas.harvard.edu" ;
+
+    $ mail -> SetFrom ( "jharvard@cs50.net" );
+
+    $ mail -> AddAddress ( "jharvard@cs50.net" );
+
+    $ mail -> Assunto = "registro" ;
+
+    $ mail -> Corpo =
+        "Esta pessoa acabou de se registrar: \ n \ n" .
+        "Nome:" . $ _POST [ 'nome' ]. "\ n" .
+        "Capitão:" . $ _POST [ 'capitão' ]. "\ n" .
+        "Sexo:" . $ _POST [ 'gênero' ]. "\ n" .
+        "Dormitório:" . $ _POST [ 'dormitório' ];
+
+    if ( $ mail -> Send () == false ) {
+        die ( $ mail -> ErrInfo );
+    }
+}
+
+?>
+
+<! DOCTYPE html >
+< html >
+    < cabeça >
+        < Título > Frosh IMs </ title >
+    </ cabeça >    
+    < corpo >
+        <? php  if ( vazio ( $ _POST [ 'nome' ]) || vazio ( $ _POST [ 'gênero' ]) || vazio ( $ _POST [ 'dormitório' ])): ?>
+            Você deve fornecer seu nome, sexo e dormitório! Go < a  href = " froshims-2.php " > volta </ a > .
+        <? php  else : ?>
+            Você está registrado! (Bem, na verdade não.)
+        <? php  endif ; ?>
+    </ corpo >
+</ html > 
