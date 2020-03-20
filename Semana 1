@@ -1,0 +1,14 @@
+# include  < stdio.h >
+
+int  main ( vazio )
+{
+    char c;
+    d duplo ;
+    flutuador f;
+    int i;
+
+    printf ( " caracter: % i \ n " , tamanho de (c));
+    printf ( " duplo: % i \ n " , tamanhoof (d));
+    printf ( " float: % i \ n " , tamanhoof (f));
+    printf ( " int: % i \ n " , tamanhoof (i));
+}
