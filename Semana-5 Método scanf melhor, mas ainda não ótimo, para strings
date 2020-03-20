@@ -1,0 +1,8 @@
+# include  < stdio.h >
+int  main ( vazio )
+{
+    caracteres s [ 16 ];
+    printf ( " String por favor: " );
+    scanf ( " % s " , s);
+    printf ( " Obrigado pelo % s ! \ n " , s);
+} 
